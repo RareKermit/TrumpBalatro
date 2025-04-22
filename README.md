@@ -1,7 +1,7 @@
 # TrumpBalatro
 Trump Balatro Mod! -- Now With Tariffs! (and other things)
 
-Requires steamoded, credit to them for their mod in general, and the ModdedVanilla adding joker tutorial stuff used here as well!
+Requires steamoded, credit to them for their mod in general, and the ModdedVanilla joker-adding stuff used here as well!
 
 ---
 
