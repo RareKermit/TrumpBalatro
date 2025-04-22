@@ -451,7 +451,7 @@ self.P_CENTERS.j_caino.config.extra = 0.5
 
 self.P_CENTERS.j_triboulet.config.extra = 1.5
 
-self.P_CENTERS.j_yorick.config.extra.xmult = 1.5
+self.P_CENTERS.j_yorick.config.extra.xmult = 0.5
 
 -- j_chicot is bad as is, it's fine lol.
 
