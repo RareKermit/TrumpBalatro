@@ -951,3 +951,13 @@ position = 'at'
 payload = '''ret = ret +  1.5'''
 match_indent = true
 times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''mult_mod = G.GAME.hands[context.scoring_name].played'''
+position = 'at'
+payload = '''mult_mod = G.GAME.hands[context.scoring_name].played * 0.5'''
+match_indent = true
+times = 1
+
