@@ -964,8 +964,8 @@ times = 1
 [[patches]]
 [patches.pattern]
 target = "card.lua"
-pattern = '''h_mult = 13'''
+pattern = '''h_mult = 13,'''
 position = 'at'
-payload = '''h_mult = 6.5'''
+payload = '''h_mult = 6.5,'''
 match_indent = true
 times = 1
