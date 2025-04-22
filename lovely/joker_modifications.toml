@@ -167,7 +167,7 @@ self.P_CENTERS.j_ice_cream.config.extra.chips = 50
 --last hand instead of first
 self.P_CENTERS.j_dna.cost = self.P_CENTERS.j_dna.cost * 1.5
 
-self.P_CENTERS.j_splash.cost = self.P_CENTERS.j_splash.cost * 2
+self.P_CENTERS.j_splash.cost = 40
 
 self.P_CENTERS.j_blue_joker.cost = self.P_CENTERS.j_blue_joker.cost * 1.5
 self.P_CENTERS.j_blue_joker.config.extra = self.P_CENTERS.j_blue_joker.config.extra * 0.5
