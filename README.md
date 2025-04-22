@@ -1,5 +1,7 @@
 # TrumpBalatro
-Trump Balatro Mod! -- Now With Tariffs! (and other things)
+Trump Balatro Mod! -- Now With Tariffs!
+
+(Generally increased prices and weaker jokers (and some other changes lol...))
 
 Requires steamoded, credit to them for their mod in general, and the ModdedVanilla joker-adding stuff used here as well!
 
