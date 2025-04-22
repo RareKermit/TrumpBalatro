@@ -1,3 +1,12 @@
+if SMODS and SMODS.current_mod then
+	SMODS.Atlas({
+		key = "modicon",
+		path = "modicon.png",
+		px = 32,
+		py = 32,
+	})
+end
+
 SMODS.Atlas {
 	key = "ModdedVanilla",
 	path = "ModdedVanilla.png",
