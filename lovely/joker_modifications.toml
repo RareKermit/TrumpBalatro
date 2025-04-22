@@ -1,0 +1,953 @@
+[manifest]
+version = "1.0.0"
+priority = 2147483600
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''self.P_LOCKED = {}'''
+position = 'after'
+payload = '''
+
+-- page 1
+self.P_CENTERS.j_joker.cost = self.P_CENTERS.j_joker.cost * 1.5
+self.P_CENTERS.j_joker.config.mult = self.P_CENTERS.j_joker.config.mult * 0.5
+
+self.P_CENTERS.j_greedy_joker.cost = self.P_CENTERS.j_greedy_joker.cost * 1.5
+self.P_CENTERS.j_greedy_joker.config.extra.s_mult = self.P_CENTERS.j_greedy_joker.config.extra.s_mult * 0.5
+
+self.P_CENTERS.j_lusty_joker.cost = self.P_CENTERS.j_lusty_joker.cost * 1.5
+self.P_CENTERS.j_lusty_joker.config.extra.s_mult = self.P_CENTERS.j_lusty_joker.config.extra.s_mult * 0.5
+
+self.P_CENTERS.j_wrathful_joker.cost = self.P_CENTERS.j_wrathful_joker.cost * 1.5
+self.P_CENTERS.j_wrathful_joker.config.extra.s_mult = self.P_CENTERS.j_wrathful_joker.config.extra.s_mult * 0.5
+
+self.P_CENTERS.j_gluttenous_joker.cost = self.P_CENTERS.j_gluttenous_joker.cost * 1.5
+self.P_CENTERS.j_gluttenous_joker.config.extra.s_mult = self.P_CENTERS.j_gluttenous_joker.config.extra.s_mult * 0.5
+
+self.P_CENTERS.j_jolly.cost = self.P_CENTERS.j_jolly.cost * 1.5
+self.P_CENTERS.j_jolly.config.t_mult = self.P_CENTERS.j_jolly.config.t_mult * 0.5
+
+self.P_CENTERS.j_zany.cost = self.P_CENTERS.j_zany.cost * 1.5
+self.P_CENTERS.j_zany.config.t_mult = self.P_CENTERS.j_zany.config.t_mult * 0.5
+
+self.P_CENTERS.j_mad.cost = self.P_CENTERS.j_mad.cost * 1.5
+self.P_CENTERS.j_mad.config.t_mult = self.P_CENTERS.j_mad.config.t_mult * 0.5
+
+self.P_CENTERS.j_crazy.cost = self.P_CENTERS.j_crazy.cost * 1.5
+self.P_CENTERS.j_crazy.config.t_mult = self.P_CENTERS.j_crazy.config.t_mult * 0.5
+
+self.P_CENTERS.j_droll.cost = self.P_CENTERS.j_droll.cost * 1.5
+self.P_CENTERS.j_droll.config.t_mult = self.P_CENTERS.j_droll.config.t_mult * 0.5
+
+self.P_CENTERS.j_sly.cost = self.P_CENTERS.j_sly.cost * 1.5
+self.P_CENTERS.j_sly.config.t_chips = self.P_CENTERS.j_sly.config.t_chips * 0.5
+
+self.P_CENTERS.j_wily.cost = self.P_CENTERS.j_wily.cost * 1.5
+self.P_CENTERS.j_wily.config.t_chips = self.P_CENTERS.j_wily.config.t_chips * 0.5
+
+self.P_CENTERS.j_clever.cost = self.P_CENTERS.j_clever.cost * 1.5
+self.P_CENTERS.j_clever.config.t_chips = self.P_CENTERS.j_clever.config.t_chips * 0.5
+
+self.P_CENTERS.j_devious.cost = self.P_CENTERS.j_devious.cost * 1.5
+self.P_CENTERS.j_devious.config.t_chips = self.P_CENTERS.j_devious.config.t_chips * 0.5
+
+self.P_CENTERS.j_crafty.cost = self.P_CENTERS.j_crafty.cost * 1.5
+self.P_CENTERS.j_crafty.config.t_chips = self.P_CENTERS.j_crafty.config.t_chips * 0.5
+
+-- page 2
+self.P_CENTERS.j_half.cost = self.P_CENTERS.j_half.cost * 1.5
+self.P_CENTERS.j_half.config.extra.mult = self.P_CENTERS.j_half.config.extra.mult * 0.5
+
+self.P_CENTERS.j_stencil.cost = self.P_CENTERS.j_stencil.cost * 1.5
+--Stencil mega nerfed by edit elsewhere
+
+self.P_CENTERS.j_four_fingers.cost = self.P_CENTERS.j_four_fingers.cost * 2
+
+self.P_CENTERS.j_mime.cost = self.P_CENTERS.j_mime.cost * 2
+
+--buffed credit card
+self.P_CENTERS.j_credit_card.config.extra = 40
+
+--Dagger half
+self.P_CENTERS.j_ceremonial.cost = self.P_CENTERS.j_ceremonial.cost * 1.5
+
+self.P_CENTERS.j_banner.cost = self.P_CENTERS.j_banner.cost * 1.5
+self.P_CENTERS.j_banner.config.extra = self.P_CENTERS.j_banner.config.extra * 0.5
+
+self.P_CENTERS.j_mystic_summit.cost = self.P_CENTERS.j_mystic_summit.cost * 1.5
+self.P_CENTERS.j_mystic_summit.config.extra.mult = self.P_CENTERS.j_mystic_summit.config.extra.mult * 0.5
+
+--Marble is fine, nerf stone itself
+self.P_CENTERS.j_marble.cost = self.P_CENTERS.j_marble.cost * 1.5
+
+self.P_CENTERS.j_loyalty_card.cost = self.P_CENTERS.j_loyalty_card.cost * 1.5
+self.P_CENTERS.j_loyalty_card.config.extra.Xmult = self.P_CENTERS.j_loyalty_card.config.extra.Xmult * 0.25
+
+self.P_CENTERS.j_8_ball.config.extra = 8
+
+self.P_CENTERS.j_misprint.cost = self.P_CENTERS.j_misprint.cost * 1.5
+self.P_CENTERS.j_misprint.config.extra.max = 12
+
+-- Dusk is fine
+self.P_CENTERS.j_dusk.cost = self.P_CENTERS.j_dusk.cost * 2
+
+--Raised fist another half
+self.P_CENTERS.j_raised_fist.cost = self.P_CENTERS.j_raised_fist.cost * 1.5
+
+--Chaos is fine
+self.P_CENTERS.j_chaos.cost = self.P_CENTERS.j_chaos.cost * 2
+
+
+--page 3
+self.P_CENTERS.j_fibonacci.cost = self.P_CENTERS.j_fibonacci.cost * 1.5
+self.P_CENTERS.j_fibonacci.config.extra = self.P_CENTERS.j_fibonacci.config.extra * 0.5
+
+self.P_CENTERS.j_steel_joker.cost = self.P_CENTERS.j_steel_joker.cost * 1.5
+self.P_CENTERS.j_steel_joker.config.extra = self.P_CENTERS.j_steel_joker.config.extra * 0.5
+
+self.P_CENTERS.j_scary_face.cost = self.P_CENTERS.j_scary_face.cost * 1.5
+self.P_CENTERS.j_scary_face.config.extra = self.P_CENTERS.j_scary_face.config.extra * 0.5
+
+self.P_CENTERS.j_abstract.cost = self.P_CENTERS.j_abstract.cost * 1.5
+self.P_CENTERS.j_abstract.config.extra = self.P_CENTERS.j_abstract.config.extra * 0.5
+
+self.P_CENTERS.j_delayed_grat.cost = self.P_CENTERS.j_delayed_grat.cost * 1.5
+self.P_CENTERS.j_delayed_grat.config.extra = self.P_CENTERS.j_delayed_grat.config.extra * 0.5
+
+--Hack is reduced to affecting 2's n 3's only
+self.P_CENTERS.j_hack.cost = self.P_CENTERS.j_hack.cost * 1.5
+
+self.P_CENTERS.j_pareidolia.cost = self.P_CENTERS.j_pareidolia.cost * 1.5
+
+self.P_CENTERS.j_gros_michel.cost = self.P_CENTERS.j_gros_michel.cost * 1.5
+self.P_CENTERS.j_gros_michel.config.extra.mult = 9
+self.P_CENTERS.j_gros_michel.config.extra.odds = 11
+
+self.P_CENTERS.j_even_steven.cost = self.P_CENTERS.j_even_steven.cost * 1.5
+self.P_CENTERS.j_even_steven.config.extra = self.P_CENTERS.j_even_steven.config.extra * 0.5
+
+self.P_CENTERS.j_odd_todd.cost = self.P_CENTERS.j_odd_todd.cost * 1.5
+self.P_CENTERS.j_odd_todd.config.extra = self.P_CENTERS.j_odd_todd.config.extra * 0.5
+
+self.P_CENTERS.j_scholar.cost = self.P_CENTERS.j_scholar.cost * 1.5
+self.P_CENTERS.j_scholar.config.extra.mult = self.P_CENTERS.j_scholar.config.extra.mult * 0.75
+self.P_CENTERS.j_scholar.config.extra.chips = self.P_CENTERS.j_scholar.config.extra.chips * 0.75
+
+self.P_CENTERS.j_business.cost = self.P_CENTERS.j_business.cost * 1.5
+self.P_CENTERS.j_business.config.extra = 4
+
+self.P_CENTERS.j_supernova.cost = self.P_CENTERS.j_supernova.cost * 1.5
+self.P_CENTERS.j_supernova.config.extra = self.P_CENTERS.j_supernova.config.extra * 0.5
+
+self.P_CENTERS.j_ride_the_bus.cost = self.P_CENTERS.j_ride_the_bus.cost * 1.5
+self.P_CENTERS.j_ride_the_bus.config.extra = self.P_CENTERS.j_ride_the_bus.config.extra * 0.5
+
+self.P_CENTERS.j_space.cost = self.P_CENTERS.j_space.cost * 1.5
+self.P_CENTERS.j_space.config.extra = 8
+
+
+
+--page 4
+self.P_CENTERS.j_egg.cost = self.P_CENTERS.j_egg.cost * 1.5
+self.P_CENTERS.j_egg.config.extra = self.P_CENTERS.j_egg.config.extra * 0.5
+
+self.P_CENTERS.j_burglar.cost = self.P_CENTERS.j_burglar.cost * 1.5
+self.P_CENTERS.j_burglar.config.extra = 2
+
+self.P_CENTERS.j_blackboard.cost = self.P_CENTERS.j_blackboard.cost * 1.5
+self.P_CENTERS.j_blackboard.config.extra = 2
+
+self.P_CENTERS.j_runner.cost = self.P_CENTERS.j_runner.cost * 1.5
+self.P_CENTERS.j_runner.config.extra.chip_mod = self.P_CENTERS.j_runner.config.extra.chip_mod * 0.5
+
+self.P_CENTERS.j_ice_cream.cost = self.P_CENTERS.j_ice_cream.cost * 1.5
+self.P_CENTERS.j_ice_cream.config.extra.chips = 50
+
+--last hand instead of first
+self.P_CENTERS.j_dna.cost = self.P_CENTERS.j_dna.cost * 1.5
+
+self.P_CENTERS.j_splash.cost = self.P_CENTERS.j_splash.cost * 2
+
+self.P_CENTERS.j_blue_joker.cost = self.P_CENTERS.j_blue_joker.cost * 1.5
+self.P_CENTERS.j_blue_joker.config.extra = self.P_CENTERS.j_blue_joker.config.extra * 0.5
+
+--last hand instead of first
+self.P_CENTERS.j_sixth_sense.cost = self.P_CENTERS.j_sixth_sense.cost * 1.5
+
+self.P_CENTERS.j_constellation.cost = self.P_CENTERS.j_constellation.cost * 1.5
+self.P_CENTERS.j_constellation.config.extra = self.P_CENTERS.j_constellation.config.extra * 0.5
+
+self.P_CENTERS.j_hiker.cost = self.P_CENTERS.j_hiker.cost * 1.5
+self.P_CENTERS.j_hiker.config.extra = self.P_CENTERS.j_hiker.config.extra * 0.5
+
+self.P_CENTERS.j_faceless.cost = self.P_CENTERS.j_faceless.cost * 1.5
+self.P_CENTERS.j_faceless.config.extra.dollars = self.P_CENTERS.j_faceless.config.extra.dollars * 0.5
+
+self.P_CENTERS.j_green_joker.cost = self.P_CENTERS.j_green_joker.cost * 1.5
+self.P_CENTERS.j_green_joker.config.extra.hand_add = self.P_CENTERS.j_green_joker.config.extra.hand_add * 0.5
+self.P_CENTERS.j_green_joker.config.extra.discard_sub = self.P_CENTERS.j_green_joker.config.extra.discard_sub * 0.5
+
+--Makes planets now
+self.P_CENTERS.j_superposition.cost = self.P_CENTERS.j_superposition.cost * 1.5
+
+self.P_CENTERS.j_todo_list.cost = self.P_CENTERS.j_todo_list.cost * 1.5
+self.P_CENTERS.j_todo_list.config.extra.dollars = self.P_CENTERS.j_todo_list.config.extra.dollars * 0.5
+
+
+
+--page 5
+self.P_CENTERS.j_cavendish.cost = self.P_CENTERS.j_cavendish.cost * 1.5
+self.P_CENTERS.j_cavendish.config.extra.odds = 6
+
+--requires another play of the hand
+self.P_CENTERS.j_card_sharp.cost = self.P_CENTERS.j_card_sharp.cost * 1.5
+self.P_CENTERS.j_card_sharp.config.extra.Xmult = 3
+
+self.P_CENTERS.j_red_card.cost = self.P_CENTERS.j_red_card.cost * 1.5
+self.P_CENTERS.j_red_card.config.extra = self.P_CENTERS.j_red_card.config.extra * 0.5
+
+self.P_CENTERS.j_madness.cost = self.P_CENTERS.j_madness.cost * 1.5
+self.P_CENTERS.j_madness.config.extra = self.P_CENTERS.j_madness.config.extra * 0.5
+
+self.P_CENTERS.j_square.cost = self.P_CENTERS.j_square.cost * 1.5
+self.P_CENTERS.j_square.config.extra.chip_mod = 2
+
+self.P_CENTERS.j_seance.cost = self.P_CENTERS.j_seance.cost * 1.5
+
+self.P_CENTERS.j_riff_raff.cost = self.P_CENTERS.j_riff_raff.cost * 2
+self.P_CENTERS.j_riff_raff.config.extra = 1
+
+self.P_CENTERS.j_vampire.cost = self.P_CENTERS.j_vampire.cost * 1.5
+self.P_CENTERS.j_vampire.config.extra = self.P_CENTERS.j_vampire.config.extra * 0.5
+
+self.P_CENTERS.j_shortcut.cost = self.P_CENTERS.j_shortcut.cost * 2
+
+self.P_CENTERS.j_hologram.cost = self.P_CENTERS.j_hologram.cost * 1.5
+self.P_CENTERS.j_hologram.config.extra = self.P_CENTERS.j_hologram.config.extra * 0.5
+
+self.P_CENTERS.j_vagabond.cost = self.P_CENTERS.j_vagabond.cost * 1.5
+self.P_CENTERS.j_vagabond.config.extra = -1
+
+self.P_CENTERS.j_baron.cost = self.P_CENTERS.j_baron.cost * 1.5
+self.P_CENTERS.j_baron.config.extra = 1.25
+
+self.P_CENTERS.j_cloud_9.cost = self.P_CENTERS.j_cloud_9.cost * 1.5
+self.P_CENTERS.j_cloud_9.config.extra = self.P_CENTERS.j_cloud_9.config.extra * 0.5
+
+self.P_CENTERS.j_rocket.cost = self.P_CENTERS.j_rocket.cost * 1.5
+self.P_CENTERS.j_rocket.config.extra.increase = self.P_CENTERS.j_rocket.config.extra.increase * 0.5
+
+self.P_CENTERS.j_obelisk.cost = self.P_CENTERS.j_obelisk.cost * 1.5
+self.P_CENTERS.j_obelisk.config.extra = 0.1
+
+
+
+
+--page 6
+self.P_CENTERS.j_midas_mask.cost = self.P_CENTERS.j_midas_mask.cost * 2
+
+self.P_CENTERS.j_luchador.cost = self.P_CENTERS.j_luchador.cost * 2
+
+self.P_CENTERS.j_photograph.cost = self.P_CENTERS.j_photograph.cost * 1.5
+self.P_CENTERS.j_photograph.config.extra = 1.5
+
+self.P_CENTERS.j_gift.cost = self.P_CENTERS.j_gift.cost * 1.5
+self.P_CENTERS.j_gift.config.extra = 0.5
+
+self.P_CENTERS.j_turtle_bean.config.extra.h_mod = 5
+
+self.P_CENTERS.j_erosion.cost = self.P_CENTERS.j_erosion.cost * 1.5
+self.P_CENTERS.j_erosion.config.extra = 2
+
+self.P_CENTERS.j_reserved_parking.cost = self.P_CENTERS.j_reserved_parking.cost * 1.5
+self.P_CENTERS.j_reserved_parking.config.extra.odds = 4
+
+self.P_CENTERS.j_mail.cost = self.P_CENTERS.j_mail.cost * 1.5
+self.P_CENTERS.j_mail.config.extra = 2.5
+
+self.P_CENTERS.j_to_the_moon.cost = self.P_CENTERS.j_to_the_moon.cost * 1.5
+self.P_CENTERS.j_to_the_moon.config.extra = 0.5
+
+self.P_CENTERS.j_hallucination.cost = self.P_CENTERS.j_hallucination.cost * 1.5
+self.P_CENTERS.j_hallucination.config.extra = 4
+
+--fortune teller, no cost increase, no reductions, spectral cards now
+
+self.P_CENTERS.j_drunkard.cost = self.P_CENTERS.j_drunkard.cost * 2
+
+self.P_CENTERS.j_juggler.cost = self.P_CENTERS.j_juggler.cost * 2
+
+self.P_CENTERS.j_stone.cost = self.P_CENTERS.j_stone.cost * 1.5
+self.P_CENTERS.j_stone.config.extra = self.P_CENTERS.j_stone.config.extra * 0.5
+
+self.P_CENTERS.j_golden.cost = self.P_CENTERS.j_golden.cost * 1.5
+self.P_CENTERS.j_golden.config.extra = 2
+
+
+
+
+
+
+
+
+
+
+
+--page 7
+self.P_CENTERS.j_lucky_cat.cost = self.P_CENTERS.j_lucky_cat.cost * 1.5
+self.P_CENTERS.j_lucky_cat.config.extra = self.P_CENTERS.j_lucky_cat.config.extra * 0.5
+
+self.P_CENTERS.j_baseball.cost = self.P_CENTERS.j_baseball.cost * 1.5
+self.P_CENTERS.j_baseball.config.extra = 1.25
+
+self.P_CENTERS.j_bull.cost = self.P_CENTERS.j_bull.cost * 1.5
+self.P_CENTERS.j_bull.config.extra = self.P_CENTERS.j_bull.config.extra * 0.5
+
+self.P_CENTERS.j_diet_cola.cost = self.P_CENTERS.j_diet_cola.cost * 2
+
+self.P_CENTERS.j_trading.cost = self.P_CENTERS.j_trading.cost * 1.5
+self.P_CENTERS.j_trading.config.extra = self.P_CENTERS.j_trading.config.extra * 0.5
+
+self.P_CENTERS.j_flash.cost = self.P_CENTERS.j_flash.cost * 1.5
+self.P_CENTERS.j_flash.config.extra = self.P_CENTERS.j_flash.config.extra * 0.5
+
+self.P_CENTERS.j_popcorn.config.mult = 12
+
+self.P_CENTERS.j_trousers.cost = self.P_CENTERS.j_trousers.cost * 1.5
+self.P_CENTERS.j_trousers.config.extra = self.P_CENTERS.j_trousers.config.extra * 0.5
+
+self.P_CENTERS.j_ancient.cost = self.P_CENTERS.j_ancient.cost * 1.5
+self.P_CENTERS.j_ancient.config.extra = 1.25
+
+self.P_CENTERS.j_ramen.cost = self.P_CENTERS.j_ramen.cost * 1.5
+self.P_CENTERS.j_ramen.config.Xmult = 1.5
+
+self.P_CENTERS.j_walkie_talkie.cost = self.P_CENTERS.j_walkie_talkie.cost * 1.5
+self.P_CENTERS.j_walkie_talkie.config.extra.chips = 7.5
+self.P_CENTERS.j_walkie_talkie.config.extra.mult = 3
+
+self.P_CENTERS.j_selzer.cost = self.P_CENTERS.j_selzer.cost * 1.5
+self.P_CENTERS.j_selzer.config.extra = 5
+
+self.P_CENTERS.j_castle.cost = self.P_CENTERS.j_castle.cost * 1.5
+self.P_CENTERS.j_castle.config.extra.chip_mod = self.P_CENTERS.j_castle.config.extra.chip_mod * 0.5
+
+self.P_CENTERS.j_smiley.cost = self.P_CENTERS.j_smiley.cost * 1.5
+self.P_CENTERS.j_smiley.config.extra = self.P_CENTERS.j_smiley.config.extra * 0.5
+
+self.P_CENTERS.j_campfire.cost = self.P_CENTERS.j_campfire.cost * 1.5
+self.P_CENTERS.j_campfire.config.extra = self.P_CENTERS.j_campfire.config.extra * 0.5
+
+
+--page 8
+
+self.P_CENTERS.j_ticket.cost = self.P_CENTERS.j_ticket.cost * 1.5
+self.P_CENTERS.j_ticket.config.extra = self.P_CENTERS.j_ticket.config.extra * 0.5
+
+--set j_mr_bones to 99%
+
+self.P_CENTERS.j_acrobat.cost = self.P_CENTERS.j_acrobat.cost * 1.5
+self.P_CENTERS.j_acrobat.config.extra = 2
+
+self.P_CENTERS.j_sock_and_buskin.cost = self.P_CENTERS.j_sock_and_buskin.cost * 2
+
+-- cut by 50% elsewhere in code
+self.P_CENTERS.j_swashbuckler.cost = self.P_CENTERS.j_swashbuckler.cost * 1.5
+
+
+self.P_CENTERS.j_troubadour.config.extra.h_size = 1
+
+self.P_CENTERS.j_certificate.cost = self.P_CENTERS.j_certificate.cost * 2
+
+self.P_CENTERS.j_smeared.cost = self.P_CENTERS.j_smeared.cost * 2
+
+self.P_CENTERS.j_throwback.cost = self.P_CENTERS.j_throwback.cost * 1.5
+self.P_CENTERS.j_throwback.config.extra = self.P_CENTERS.j_throwback.config.extra * 0.5
+
+self.P_CENTERS.j_hanging_chad.cost = self.P_CENTERS.j_hanging_chad.cost * 2
+self.P_CENTERS.j_hanging_chad.config.extra = 1
+
+self.P_CENTERS.j_rough_gem.cost = self.P_CENTERS.j_rough_gem.cost * 1.5
+self.P_CENTERS.j_rough_gem.config.extra = 0.5
+
+self.P_CENTERS.j_bloodstone.cost = self.P_CENTERS.j_bloodstone.cost * 1.5
+self.P_CENTERS.j_bloodstone.config.extra.odds = 4
+
+self.P_CENTERS.j_arrowhead.cost = self.P_CENTERS.j_arrowhead.cost * 1.5
+self.P_CENTERS.j_arrowhead.config.extra = 25
+
+self.P_CENTERS.j_onyx_agate.cost = self.P_CENTERS.j_onyx_agate.cost * 1.5
+self.P_CENTERS.j_onyx_agate.config.extra = self.P_CENTERS.j_onyx_agate.config.extra * 0.5
+
+self.P_CENTERS.j_glass.cost = self.P_CENTERS.j_glass.cost * 1.5
+self.P_CENTERS.j_glass.config.extra = 0.35
+
+self.P_CENTERS.j_ring_master.cost = self.P_CENTERS.j_ring_master.cost * 2
+
+self.P_CENTERS.j_flower_pot.cost = self.P_CENTERS.j_flower_pot.cost * 1.5
+self.P_CENTERS.j_flower_pot.config.extra = 2
+
+self.P_CENTERS.j_blueprint.cost = self.P_CENTERS.j_blueprint.cost * 2
+
+self.P_CENTERS.j_wee.cost = 2
+self.P_CENTERS.j_wee.config.extra.chip_mod = 2
+
+self.P_CENTERS.j_merry_andy.cost = self.P_CENTERS.j_merry_andy.cost * 1.5
+self.P_CENTERS.j_merry_andy.config.h_size = -2
+
+self.P_CENTERS.j_oops.cost = self.P_CENTERS.j_oops.cost * 2
+
+self.P_CENTERS.j_idol.cost = self.P_CENTERS.j_idol.cost * 1.5
+self.P_CENTERS.j_idol.config.extra = 1.5
+
+self.P_CENTERS.j_seeing_double.cost = self.P_CENTERS.j_seeing_double.cost * 1.5
+self.P_CENTERS.j_seeing_double.config.extra = 1.5
+
+self.P_CENTERS.j_matador.cost = self.P_CENTERS.j_matador.cost * 1.5
+self.P_CENTERS.j_matador.config.extra = 4
+
+self.P_CENTERS.j_hit_the_road.cost = self.P_CENTERS.j_hit_the_road.cost * 1.5
+self.P_CENTERS.j_hit_the_road.config.extra = self.P_CENTERS.j_hit_the_road.config.extra * 0.5
+
+self.P_CENTERS.j_duo.cost = self.P_CENTERS.j_duo.cost * 1.5
+self.P_CENTERS.j_duo.config.Xmult = 1.5
+
+self.P_CENTERS.j_trio.cost = self.P_CENTERS.j_trio.cost * 1.5
+self.P_CENTERS.j_trio.config.Xmult = 2
+
+self.P_CENTERS.j_family.cost = self.P_CENTERS.j_family.cost * 1.5
+self.P_CENTERS.j_family.config.Xmult = 2.5
+
+self.P_CENTERS.j_order.cost = self.P_CENTERS.j_order.cost * 1.5
+self.P_CENTERS.j_order.config.Xmult = 2
+
+self.P_CENTERS.j_tribe.cost = self.P_CENTERS.j_tribe.cost * 1.5
+self.P_CENTERS.j_tribe.config.Xmult = 1.5
+
+
+--page 10
+self.P_CENTERS.j_stuntman.config.extra.h_size = 8
+
+self.P_CENTERS.j_invisible.config.extra = 8
+
+self.P_CENTERS.j_satellite.cost = self.P_CENTERS.j_satellite.cost * 1.5
+self.P_CENTERS.j_satellite.config.extra = self.P_CENTERS.j_satellite.config.extra * 0.5
+
+self.P_CENTERS.j_shoot_the_moon.cost = self.P_CENTERS.j_shoot_the_moon.cost * 1.5
+self.P_CENTERS.j_shoot_the_moon.config.extra = self.P_CENTERS.j_shoot_the_moon.config.extra * 0.5
+
+self.P_CENTERS.j_drivers_license.cost = self.P_CENTERS.j_drivers_license.cost * 1.5
+self.P_CENTERS.j_drivers_license.config.extra = 2
+
+self.P_CENTERS.j_astronomer.cost = self.P_CENTERS.j_astronomer.cost * 2
+
+self.P_CENTERS.j_burnt.cost = self.P_CENTERS.j_burnt.cost * 2
+
+self.P_CENTERS.j_bootstraps.cost = self.P_CENTERS.j_bootstraps.cost * 1.5
+self.P_CENTERS.j_bootstraps.config.extra.dollars = 10
+
+self.P_CENTERS.j_caino.config.extra = 0.5
+
+self.P_CENTERS.j_triboulet.config.extra = 1.5
+
+self.P_CENTERS.j_yorick.config.extra.xmult = 1.5
+
+-- j_chicot is bad as is, it's fine lol.
+
+-- j_perkeo nerfed thru card.lua, removing negative perk
+
+-- JOKERS DONE
+--double cost of all packs
+
+self.P_CENTERS.p_arcana_normal_1.cost = self.P_CENTERS.p_arcana_normal_1.cost * 1.5
+self.P_CENTERS.p_arcana_normal_2.cost = self.P_CENTERS.p_arcana_normal_2.cost * 1.5
+self.P_CENTERS.p_arcana_normal_3.cost = self.P_CENTERS.p_arcana_normal_3.cost * 1.5
+self.P_CENTERS.p_arcana_normal_4.cost = self.P_CENTERS.p_arcana_normal_4.cost * 1.5
+self.P_CENTERS.p_arcana_jumbo_1.cost = self.P_CENTERS.p_arcana_jumbo_1.cost * 1.5
+self.P_CENTERS.p_arcana_jumbo_2.cost = self.P_CENTERS.p_arcana_jumbo_2.cost * 1.5
+self.P_CENTERS.p_arcana_mega_1.cost = self.P_CENTERS.p_arcana_mega_1.cost * 1.5
+self.P_CENTERS.p_arcana_mega_2.cost = self.P_CENTERS.p_arcana_mega_2.cost * 1.5
+self.P_CENTERS.p_celestial_normal_1.cost = self.P_CENTERS.p_celestial_normal_1.cost * 1.5
+self.P_CENTERS.p_celestial_normal_2.cost = self.P_CENTERS.p_celestial_normal_2.cost * 1.5
+self.P_CENTERS.p_celestial_normal_3.cost = self.P_CENTERS.p_celestial_normal_3.cost * 1.5
+self.P_CENTERS.p_celestial_normal_4.cost = self.P_CENTERS.p_celestial_normal_4.cost * 1.5
+self.P_CENTERS.p_celestial_jumbo_1.cost = self.P_CENTERS.p_celestial_jumbo_1.cost * 1.5
+self.P_CENTERS.p_celestial_jumbo_2.cost = self.P_CENTERS.p_celestial_jumbo_2.cost * 1.5
+self.P_CENTERS.p_celestial_mega_1.cost = self.P_CENTERS.p_celestial_mega_1.cost * 1.5
+self.P_CENTERS.p_celestial_mega_2.cost = self.P_CENTERS.p_celestial_mega_2.cost * 1.5
+self.P_CENTERS.p_spectral_normal_1.cost = self.P_CENTERS.p_spectral_normal_1.cost * 2
+self.P_CENTERS.p_spectral_normal_2.cost = self.P_CENTERS.p_spectral_normal_2.cost * 2
+self.P_CENTERS.p_spectral_jumbo_1.cost = self.P_CENTERS.p_spectral_jumbo_1.cost * 2
+self.P_CENTERS.p_spectral_mega_1.cost = self.P_CENTERS.p_spectral_mega_1.cost * 2
+self.P_CENTERS.p_standard_normal_1.cost = self.P_CENTERS.p_standard_normal_1.cost * 1.5
+self.P_CENTERS.p_standard_normal_2.cost = self.P_CENTERS.p_standard_normal_2.cost * 1.5
+self.P_CENTERS.p_standard_normal_3.cost = self.P_CENTERS.p_standard_normal_3.cost * 1.5
+self.P_CENTERS.p_standard_normal_4.cost = self.P_CENTERS.p_standard_normal_4.cost * 1.5
+self.P_CENTERS.p_standard_jumbo_1.cost = self.P_CENTERS.p_standard_jumbo_1.cost * 1.5
+self.P_CENTERS.p_standard_jumbo_2.cost = self.P_CENTERS.p_standard_jumbo_2.cost * 1.5
+self.P_CENTERS.p_standard_mega_1.cost = self.P_CENTERS.p_standard_mega_1.cost * 1.5
+self.P_CENTERS.p_standard_mega_2.cost = self.P_CENTERS.p_standard_mega_2.cost * 1.5
+self.P_CENTERS.p_buffoon_normal_1.cost = self.P_CENTERS.p_buffoon_normal_1.cost * 1.5
+self.P_CENTERS.p_buffoon_normal_2.cost = self.P_CENTERS.p_buffoon_normal_2.cost * 1.5
+self.P_CENTERS.p_buffoon_jumbo_1.cost = self.P_CENTERS.p_buffoon_jumbo_1.cost * 1.5
+self.P_CENTERS.p_buffoon_mega_1.cost = self.P_CENTERS.p_buffoon_mega_1.cost * 1.5
+
+
+--double cost of all vouchers
+self.P_CENTERS.v_overstock_norm.cost = 15
+self.P_CENTERS.v_clearance_sale.cost = 15
+self.P_CENTERS.v_hone.cost = 15
+self.P_CENTERS.v_reroll_surplus.cost = 15
+self.P_CENTERS.v_crystal_ball.cost = 15
+self.P_CENTERS.v_telescope.cost = 15
+self.P_CENTERS.v_grabber.cost = 15
+self.P_CENTERS.v_wasteful.cost = 15
+self.P_CENTERS.v_tarot_merchant.cost = 15
+self.P_CENTERS.v_planet_merchant.cost = 15
+self.P_CENTERS.v_seed_money.cost = 15
+self.P_CENTERS.v_blank.cost = 15
+self.P_CENTERS.v_magic_trick.cost = 15
+self.P_CENTERS.v_hieroglyph.cost = 15
+self.P_CENTERS.v_directors_cut.cost = 15
+self.P_CENTERS.v_paint_brush.cost = 15
+self.P_CENTERS.v_overstock_plus.cost = 15
+self.P_CENTERS.v_liquidation.cost = 15
+self.P_CENTERS.v_glow_up.cost = 15
+self.P_CENTERS.v_reroll_glut.cost = 15
+self.P_CENTERS.v_omen_globe.cost = 15
+self.P_CENTERS.v_observatory.cost = 15
+self.P_CENTERS.v_nacho_tong.cost = 15
+self.P_CENTERS.v_recyclomancy.cost = 15
+self.P_CENTERS.v_tarot_tycoon.cost = 15
+self.P_CENTERS.v_planet_tycoon.cost = 15
+self.P_CENTERS.v_money_tree.cost = 15
+self.P_CENTERS.v_antimatter.cost = 15
+self.P_CENTERS.v_illusion.cost = 15
+self.P_CENTERS.v_petroglyph.cost = 15
+self.P_CENTERS.v_retcon.cost = 15
+self.P_CENTERS.v_palette.cost = 15
+
+
+
+
+
+--enhancements
+self.P_CENTERS.m_bonus.config.bonus = self.P_CENTERS.m_bonus.config.bonus * 0.5
+self.P_CENTERS.m_mult.config.mult = 2
+self.P_CENTERS.m_glass.config.Xmult = 1.5
+self.P_CENTERS.m_steel.config.h_x_mult = 1.25
+self.P_CENTERS.m_stone.config.bonus = self.P_CENTERS.m_stone.config.bonus * 0.5
+self.P_CENTERS.m_gold.config.h_dollars = self.P_CENTERS.m_gold.config.h_dollars * 0.5
+self.P_CENTERS.m_lucky.config.mult = self.P_CENTERS.m_lucky.config.mult * 0.5
+self.P_CENTERS.m_lucky.config.p_dollars = self.P_CENTERS.m_lucky.config.p_dollars * 0.5
+
+--tarots
+self.P_CENTERS.c_emperor.config.tarots = 1
+self.P_CENTERS.c_high_priestess.config.planets = 1
+self.P_CENTERS.c_hermit.config.extra = 15
+self.P_CENTERS.c_wheel_of_fortune.config.extra = 8
+self.P_CENTERS.c_hanged_man.config.max_highlighted = 1
+self.P_CENTERS.c_death.config.max_highlighted = 1
+self.P_CENTERS.c_death.config.min_highlighted = 1
+self.P_CENTERS.c_temperance.config.extra = 25
+self.P_CENTERS.c_star.config.max_highlighted = 2
+self.P_CENTERS.c_moon.config.max_highlighted = 2
+self.P_CENTERS.c_sun.config.max_highlighted = 2
+self.P_CENTERS.c_world.config.max_highlighted = 2
+
+--spectral
+self.P_CENTERS.c_familiar.config.extra = 1
+self.P_CENTERS.c_grim.config.extra = 1
+self.P_CENTERS.c_incantation.config.extra = 2
+self.P_CENTERS.c_cryptid.config.extra = 1
+self.P_CENTERS.c_immolate.config.extra.dollars = 10
+
+
+
+--card costs individual
+
+self.P_CENTERS.c_fool.cost = 4
+self.P_CENTERS.c_magician.cost = 4
+self.P_CENTERS.c_high_priestess.cost = 4
+self.P_CENTERS.c_empress.cost = 4
+self.P_CENTERS.c_emperor.cost = 4
+self.P_CENTERS.c_heirophant.cost = 4
+self.P_CENTERS.c_lovers.cost = 6
+self.P_CENTERS.c_chariot.cost = 4
+self.P_CENTERS.c_justice.cost = 4
+self.P_CENTERS.c_hermit.cost = 4
+self.P_CENTERS.c_wheel_of_fortune.cost = 4
+self.P_CENTERS.c_strength.cost = 6
+self.P_CENTERS.c_hanged_man.cost = 4
+self.P_CENTERS.c_death.cost = 2
+self.P_CENTERS.c_temperance.cost = 4
+self.P_CENTERS.c_devil.cost = 4
+self.P_CENTERS.c_tower.cost = 4
+self.P_CENTERS.c_star.cost = 4
+self.P_CENTERS.c_moon.cost = 4
+self.P_CENTERS.c_sun.cost = 4
+self.P_CENTERS.c_judgement.cost = 6
+self.P_CENTERS.c_world.cost = 4
+
+self.P_CENTERS.c_mercury.cost = 4
+self.P_CENTERS.c_venus.cost = 4
+self.P_CENTERS.c_earth.cost = 4
+self.P_CENTERS.c_mars.cost = 4
+self.P_CENTERS.c_jupiter.cost = 4
+self.P_CENTERS.c_saturn.cost = 4
+self.P_CENTERS.c_uranus.cost = 4
+self.P_CENTERS.c_neptune.cost = 4
+self.P_CENTERS.c_pluto.cost = 4
+self.P_CENTERS.c_planet_x.cost = 4
+self.P_CENTERS.c_ceres.cost = 4
+self.P_CENTERS.c_eris.cost = 4
+
+self.P_CENTERS.c_familiar.cost = 6
+self.P_CENTERS.c_grim.cost = 6
+self.P_CENTERS.c_incantation.cost = 6
+self.P_CENTERS.c_talisman.cost = 6
+self.P_CENTERS.c_aura.cost = 6
+self.P_CENTERS.c_wraith.cost = 8
+self.P_CENTERS.c_sigil.cost = 8
+self.P_CENTERS.c_ouija.cost = 9
+self.P_CENTERS.c_ectoplasm.cost = 10
+self.P_CENTERS.c_immolate.cost = 6
+self.P_CENTERS.c_ankh.cost = 10
+self.P_CENTERS.c_deja_vu.cost = 8
+self.P_CENTERS.c_hex.cost = 6
+self.P_CENTERS.c_trance.cost = 6
+self.P_CENTERS.c_medium.cost = 6
+self.P_CENTERS.c_cryptid.cost = 9
+self.P_CENTERS.c_soul.cost = 10
+self.P_CENTERS.c_black_hole.cost = 10
+
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if G.jokers.cards[i].ability.name == 'Joker Stencil' then self.ability.x_mult = self.ability.x_mult + 1 end'''
+position = 'at'
+payload = '''if G.jokers.cards[i].ability.name == 'Joker Stencil' then self.ability.x_mult = self.ability.x_mult - 2 end'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''self.ability.mult = self.ability.mult + sliced_card.sell_cost*2'''
+position = 'at'
+payload = '''self.ability.mult = self.ability.mult + sliced_card.sell_cost'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''card_eval_status_text(self, 'extra', nil, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {self.ability.mult+2*sliced_card.sell_cost}}, colour = G.C.RED, no_juice = true})'''
+position = 'at'
+payload = '''card_eval_status_text(self, 'extra', nil, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {self.ability.mult+sliced_card.sell_cost}}, colour = G.C.RED, no_juice = true})'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''h_mult = 2*temp_Mult,'''
+position = 'at'
+payload = '''h_mult = 1*temp_Mult,'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if self.ability.name == 'Hack' and (
+                context.other_card:get_id() == 2 or 
+                context.other_card:get_id() == 3 or 
+                context.other_card:get_id() == 4 or 
+                context.other_card:get_id() == 5) then
+                    return {
+                        message = localize('k_again_ex'),
+                        repetitions = self.ability.extra,
+                        card = self
+                    }
+                end'''
+position = 'at'
+payload = '''if self.ability.name == 'Hack' and (
+                context.other_card:get_id() == 2 or
+                context.other_card:get_id() == 3
+                ) then
+                    return {
+                        message = localize('k_again_ex'),
+                        repetitions = self.ability.extra,
+                        card = self
+                    }
+                end'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if self.ability.name == 'DNA' and G.GAME.current_round.hands_played == 0 then'''
+position = 'at'
+payload = '''if self.ability.name == 'DNA' and G.GAME.current_round.hands_left == 0 then'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''local eval = function() return G.GAME.current_round.hands_played == 0 end'''
+position = 'at'
+payload = '''local eval = function() return G.GAME.current_round.hands_left == 0 end'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if self.ability.name == 'Sixth Sense' and #context.full_hand == 1 and context.full_hand[1]:get_id() == 6 and G.GAME.current_round.hands_played == 0 then'''
+position = 'at'
+payload = '''if self.ability.name == 'Sixth Sense' and #context.full_hand == 1 and context.full_hand[1]:get_id() == 6 and G.GAME.current_round.hands_left == 0 then'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''local card_type = 'Tarot''''
+position = 'at'
+payload = '''local card_type = 'Planet''''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if self.ability.name == 'Card Sharp' and G.GAME.hands[context.scoring_name] and G.GAME.hands[context.scoring_name].played_this_round > 1 then'''
+position = 'at'
+payload = '''if self.ability.name == 'Card Sharp' and G.GAME.hands[context.scoring_name] and G.GAME.hands[context.scoring_name].played_this_round > 2 then'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''local card = create_card('Spectral',G.consumeables, nil, nil, nil, nil, nil, 'sea')'''
+position = 'at'
+payload = '''local card = create_card('Tarot',G.consumeables, nil, nil, nil, nil, nil, 'sea')'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''local jokers_to_create = math.min(2, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))'''
+position = 'at'
+payload = '''local jokers_to_create = math.min(1, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if self.ability.name == 'Fortune Teller' and G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.tarot > 0 then
+                            return {
+                                message = localize{type='variable',key='a_mult',vars={G.GAME.consumeable_usage_total.tarot}},
+                                mult_mod = G.GAME.consumeable_usage_total.tarot
+                            }
+                        end'''
+position = 'at'
+payload = '''if self.ability.name == 'Fortune Teller' and G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.spectral > 0 then
+                            return {
+                                message = localize{type='variable',key='a_mult',vars={G.GAME.consumeable_usage_total.spectral}},
+                                mult_mod = G.GAME.consumeable_usage_total.spectral
+                            }
+                        end'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''elseif self.ability.name == 'Fortune Teller' then loc_vars = {self.ability.extra, (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.tarot or 0)}'''
+position = 'at'
+payload = '''elseif self.ability.name == 'Fortune Teller' then loc_vars = {self.ability.extra, (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.spectral or 0)}'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''G.GAME.chips/G.GAME.blind.chips >= 0.25 then'''
+position = 'at'
+payload = '''G.GAME.chips/G.GAME.blind.chips >= 0.99 then'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''self.ability.mult = sell_cost'''
+position = 'at'
+payload = '''self.ability.mult = sell_cost * 0.5'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''local card = create_card('Tarot',G.consumeables, nil, nil, nil, nil, nil, 'car')'''
+position = 'at'
+payload = '''local card = create_card('Planet',G.consumeables, nil, nil, nil, nil, nil, 'car')'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''card_eval_status_text(context.blueprint_card or self, 'extra', nil, nil, nil, {message = localize('k_plus_tarot'), colour = G.C.PURPLE})'''
+position = 'at'
+payload = '''card_eval_status_text(context.blueprint_card or self, 'extra', nil, nil, nil, {message = localize('k_plus_planet'), colour = G.C.BLUE})'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''card:set_edition({negative = true}, true)'''
+position = 'at'
+payload = '''-- negative removed from Perkeo'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+["High Card"] =         {visible = true,    order = 12,mult = 1,   chips = 5,   s_mult = 1,   s_chips = 5,   level = 1, l_mult = 1, l_chips = 10, played = 0, played_this_round = 0, example = {{'S_A', true},{'D_Q', false},{'D_9', false},{'C_4', false},{'D_3', false}}},'''
+position = 'at'
+payload = '''
+["High Card"] =         {visible = true,    order = 12,mult = 1,   chips = 5,   s_mult = 1,   s_chips = 5,   level = 1, l_mult = 0.75, l_chips = 7.5, played = 0, played_this_round = 0, example = {{'S_A', true},{'D_Q', false},{'D_9', false},{'C_4', false},{'D_3', false}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Pair"] =              {visible = true,    order = 11,mult = 2,   chips = 10,  s_mult = 2,   s_chips = 10,  level = 1, l_mult = 1, l_chips = 15, played = 0, played_this_round = 0, example = {{'S_K', false},{'S_9', true},{'D_9', true},{'H_6', false},{'D_3', false}}},'''
+position = 'at'
+payload = '''            ["Pair"] =              {visible = true,    order = 11,mult = 2,   chips = 10,  s_mult = 2,   s_chips = 10,  level = 1, l_mult = 0.75, l_chips = 11.25, played = 0, played_this_round = 0, example = {{'S_K', false},{'S_9', true},{'D_9', true},{'H_6', false},{'D_3', false}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Two Pair"] =          {visible = true,    order = 10,mult = 2,   chips = 20,  s_mult = 2,   s_chips = 20,  level = 1, l_mult = 1, l_chips = 20, played = 0, played_this_round = 0, example = {{'H_A', true},{'D_A', true},{'C_Q', false},{'H_4', true},{'C_4', true}}},'''
+position = 'at'
+payload = '''            ["Two Pair"] =          {visible = true,    order = 10,mult = 2,   chips = 20,  s_mult = 2,   s_chips = 20,  level = 1, l_mult = 0.75, l_chips = 15, played = 0, played_this_round = 0, example = {{'H_A', true},{'D_A', true},{'C_Q', false},{'H_4', true},{'C_4', true}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Three of a Kind"] =   {visible = true,    order = 9, mult = 3,   chips = 30,  s_mult = 3,   s_chips = 30,  level = 1, l_mult = 2, l_chips = 20, played = 0, played_this_round = 0, example = {{'S_T', true},{'C_T', true},{'D_T', true},{'H_6', false},{'D_5', false}}},'''
+position = 'at'
+payload = '''            ["Three of a Kind"] =   {visible = true,    order = 9, mult = 3,   chips = 30,  s_mult = 3,   s_chips = 30,  level = 1, l_mult = 1.5, l_chips = 15, played = 0, played_this_round = 0, example = {{'S_T', true},{'C_T', true},{'D_T', true},{'H_6', false},{'D_5', false}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Straight"] =          {visible = true,    order = 8, mult = 4,   chips = 30,  s_mult = 4,   s_chips = 30,  level = 1, l_mult = 3, l_chips = 30, played = 0, played_this_round = 0, example = {{'D_J', true},{'C_T', true},{'C_9', true},{'S_8', true},{'H_7', true}}},'''
+position = 'at'
+payload = '''            ["Straight"] =          {visible = true,    order = 8, mult = 4,   chips = 30,  s_mult = 4,   s_chips = 30,  level = 1, l_mult = 2.25, l_chips = 22.5, played = 0, played_this_round = 0, example = {{'D_J', true},{'C_T', true},{'C_9', true},{'S_8', true},{'H_7', true}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Flush"] =             {visible = true,    order = 7, mult = 4,   chips = 35,  s_mult = 4,   s_chips = 35,  level = 1, l_mult = 2, l_chips = 15, played = 0, played_this_round = 0, example = {{'H_A', true},{'H_K', true},{'H_T', true},{'H_5', true},{'H_4', true}}},'''
+position = 'at'
+payload = '''            ["Flush"] =             {visible = true,    order = 7, mult = 4,   chips = 35,  s_mult = 4,   s_chips = 35,  level = 1, l_mult = 1.5, l_chips = 11.25, played = 0, played_this_round = 0, example = {{'H_A', true},{'H_K', true},{'H_T', true},{'H_5', true},{'H_4', true}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Full House"] =        {visible = true,    order = 6, mult = 4,   chips = 40,  s_mult = 4,   s_chips = 40,  level = 1, l_mult = 2, l_chips = 25, played = 0, played_this_round = 0, example = {{'H_K', true},{'C_K', true},{'D_K', true},{'S_2', true},{'D_2', true}}},'''
+position = 'at'
+payload = '''            ["Full House"] =        {visible = true,    order = 6, mult = 4,   chips = 40,  s_mult = 4,   s_chips = 40,  level = 1, l_mult = 1.5, l_chips = 18.75, played = 0, played_this_round = 0, example = {{'H_K', true},{'C_K', true},{'D_K', true},{'S_2', true},{'D_2', true}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Four of a Kind"] =    {visible = true,    order = 5, mult = 7,   chips = 60,  s_mult = 7,   s_chips = 60,  level = 1, l_mult = 3, l_chips = 30, played = 0, played_this_round = 0, example = {{'S_J', true},{'H_J', true},{'C_J', true},{'D_J', true},{'C_3', false}}},'''
+position = 'at'
+payload = '''            ["Four of a Kind"] =    {visible = true,    order = 5, mult = 7,   chips = 60,  s_mult = 7,   s_chips = 60,  level = 1, l_mult = 2.25, l_chips = 22.5, played = 0, played_this_round = 0, example = {{'S_J', true},{'H_J', true},{'C_J', true},{'D_J', true},{'C_3', false}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Straight Flush"] =    {visible = true,    order = 4, mult = 8,   chips = 100, s_mult = 8,   s_chips = 100, level = 1, l_mult = 4, l_chips = 40, played = 0, played_this_round = 0, example = {{'S_Q', true},{'S_J', true},{'S_T', true},{'S_9', true},{'S_8', true}}},'''
+position = 'at'
+payload = '''            ["Straight Flush"] =    {visible = true,    order = 4, mult = 8,   chips = 100, s_mult = 8,   s_chips = 100, level = 1, l_mult = 3, l_chips = 30, played = 0, played_this_round = 0, example = {{'S_Q', true},{'S_J', true},{'S_T', true},{'S_9', true},{'S_8', true}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Five of a Kind"] =    {visible = false,   order = 3, mult = 12,  chips = 120, s_mult = 12,  s_chips = 120, level = 1, l_mult = 3, l_chips = 35, played = 0, played_this_round = 0, example = {{'S_A', true},{'H_A', true},{'H_A', true},{'C_A', true},{'D_A', true}}},'''
+position = 'at'
+payload = '''            ["Five of a Kind"] =    {visible = false,   order = 3, mult = 12,  chips = 120, s_mult = 12,  s_chips = 120, level = 1, l_mult = 2.25, l_chips = 26.25, played = 0, played_this_round = 0, example = {{'S_A', true},{'H_A', true},{'H_A', true},{'C_A', true},{'D_A', true}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Flush House"] =       {visible = false,   order = 2, mult = 14,  chips = 140, s_mult = 14,  s_chips = 140, level = 1, l_mult = 4, l_chips = 40, played = 0, played_this_round = 0, example = {{'D_7', true},{'D_7', true},{'D_7', true},{'D_4', true},{'D_4', true}}},'''
+position = 'at'
+payload = '''            ["Flush House"] =       {visible = false,   order = 2, mult = 14,  chips = 140, s_mult = 14,  s_chips = 140, level = 1, l_mult = 3, l_chips = 30, played = 0, played_this_round = 0, example = {{'D_7', true},{'D_7', true},{'D_7', true},{'D_4', true},{'D_4', true}}},'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''            ["Flush Five"] =        {visible = false,   order = 1, mult = 16,  chips = 160, s_mult = 16,  s_chips = 160, level = 1, l_mult = 3, l_chips = 50, played = 0, played_this_round = 0, example = {{'S_A', true},{'S_A', true},{'S_A', true},{'S_A', true},{'S_A', true}}},'''
+position = 'at'
+payload = '''            ["Flush Five"] =        {visible = false,   order = 1, mult = 16,  chips = 160, s_mult = 16,  s_chips = 160, level = 1, l_mult = 2.25, l_chips = 37.5, played = 0, played_this_round = 0, example = {{'S_A', true},{'S_A', true},{'S_A', true},{'S_A', true},{'S_A', true}}},'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''ret = ret +  3'''
+position = 'at'
+payload = '''ret = ret +  1.5'''
+match_indent = true
+times = 1
