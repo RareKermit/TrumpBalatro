@@ -543,14 +543,12 @@ self.P_CENTERS.m_lucky.config.mult = self.P_CENTERS.m_lucky.config.mult * 0.5
 self.P_CENTERS.m_lucky.config.p_dollars = self.P_CENTERS.m_lucky.config.p_dollars * 0.5
 
 --tarots
-self.P_CENTERS.c_emperor.config.tarots = 1
-self.P_CENTERS.c_high_priestess.config.planets = 1
 self.P_CENTERS.c_hermit.config.extra = 15
 self.P_CENTERS.c_wheel_of_fortune.config.extra = 8
 self.P_CENTERS.c_hanged_man.config.max_highlighted = 1
 self.P_CENTERS.c_death.config.max_highlighted = 1
 self.P_CENTERS.c_death.config.min_highlighted = 1
-self.P_CENTERS.c_temperance.config.extra = 25
+self.P_CENTERS.c_temperance.config.extra = 20
 self.P_CENTERS.c_star.config.max_highlighted = 2
 self.P_CENTERS.c_moon.config.max_highlighted = 2
 self.P_CENTERS.c_sun.config.max_highlighted = 2
@@ -561,7 +559,7 @@ self.P_CENTERS.c_familiar.config.extra = 1
 self.P_CENTERS.c_grim.config.extra = 1
 self.P_CENTERS.c_incantation.config.extra = 2
 self.P_CENTERS.c_cryptid.config.extra = 1
-self.P_CENTERS.c_immolate.config.extra.dollars = 10
+self.P_CENTERS.c_immolate.config.extra.dollars = 0
 
 
 
