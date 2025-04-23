@@ -7,9 +7,4 @@ Requires steamoded, credit to them for their mod in general, and the ModdedVanil
 
 ---
 
-If you find a bug, you can submit a pull request, or let me know on Discord, but again I'm not sure how serious this mod is, right lol:
-Discord: \_screwtape\_
-
----
-
 Use the code here however you want!
