@@ -19,6 +19,9 @@ SMODS.Joker {
 	loc_txt = {
 		name = 'Trump Gold Card',
 		text = {
+			"The most beautiful word",
+			"in the English language...",
+			"{C:gold}Tariff{}",
 			"{X:mult,C:white} X#1# {} Mult",
 		}
 	},
